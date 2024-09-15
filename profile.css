@@ -1,0 +1,87 @@
+
+#profile-image{
+    height: 300px;
+    width: 300px;
+    margin: 20px 20px;
+}  
+
+.main-space{
+    /* padding: 50px; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.left-space{
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.right-space{
+    margin-top: 30px;
+    margin-left: 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+#user-name{
+    font-size: 50px;
+    font-weight: bold;
+    
+}
+
+.information-list{
+    list-style-type: none;
+    padding: 0px;
+}
+
+.info-list-items{
+    font-size: larger;
+    color: black;
+    font-weight: bolder;
+
+}
+
+#age{
+    font-size: large;
+    color: #66b4d7;
+    margin-left: 5px;
+}
+
+#height{
+    font-size: large;
+    color: #66b4d7;
+    margin-left: 5px;
+}
+
+#weight{
+    font-size: large;
+    color: #66b4d7;
+    margin-left: 5px;
+}
+
+#gender{
+    font-size: large;
+    color: #66b4d7;
+    margin-left: 5px;
+}
+
+
+.greeting{
+    margin-bottom: 0;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+#good{
+    font-size: 50px;
+    font-weight: bold;
+    color: #000;
+}
+#Morning{
+    font-weight: bold;
+    color: #66b4d7;
+    font-size: 50px;
+}

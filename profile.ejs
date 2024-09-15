@@ -1,0 +1,357 @@
+<%- include("partial/header.ejs") %>
+
+    </div>
+    <% if (cmm<3){%>
+    <div class="greeting">
+      <% tm=new Date()
+      const currentTime = tm.getHours();
+      if (currentTime < 12) {
+      greeting = " Morning";
+      
+      }else if (currentTime < 18) {
+      greeting = " Afternoon";
+      
+      }else {
+      greeting = " Night";
+      
+      }
+      %>
+      <span id="good">Good</span><span id="Morning"><%= greeting %></span>
+    </div> 
+    
+    <div class="main-space">
+      <div class="left-space">
+        <img id="profile-image" src="images/profile-image.png" alt="">
+      </div>
+      <div class="right-space">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                  <span>Welcome, <%= User %></span>
+              </h2>
+            </div>
+            <p> 
+              "Welcome to our organ donation community, where heroes like you give the gift of life. Your selflessness can transform lives and bring hope to those in need. Join us on this noble journey to make miracles happen, one organ at a time. Thank you for being a part of our life-saving family."
+            </p>
+           <ul class="information-list">
+            <li class="info-list-items">Name:        <% if (locals.Name) { %><span id="age">  <%= Name %></span><% } %></li>
+            <li class="info-list-items">Address:     <% if (locals.Add) { %><span id="age">   <%= Add %></span><% } %></li>
+            <li class="info-list-items">Phone No.:   <% if (locals.No) { %><span id="age">    <%= No %></span><% } %></li>
+            <li class="info-list-items">Age:         <% if (locals.Age) { %><span id="age">   <%= Age %></span><% } %></li>
+            <li class="info-list-items">Gender:      <% if (locals.Gen) { %><span id="age">   <%= Gen %></span><% } %></li>
+            <li class="info-list-items">Blood Group: <% if (locals.Blood) { %><span id="age"> <%= Blood %></span><% } %></li>
+           </ul>
+
+          </div>
+          <form method="get" action="/">
+            <div class="btn-box">
+              <button name="btn" class="btn " value="update">Update Profile</button>
+            </div>
+          </form> 
+          </div>
+
+          </div>
+
+        </div>
+        <!-- <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                Medical   <span>History</span>
+              </h2>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid cupiditate sequi fugiat ducimus nihil molestias consequatur sint vel? Nobis, maiores placeat exercitationem eum expedita culpa ullam sint ducimus modi architecto!</p>
+           
+
+
+           </ul>
+          </div>
+        </div> -->
+   
+      </div>
+    </div>
+    <div class="bottom-main-space">
+      <div class="table-name">
+        <div class="heading_container">
+          <h2>
+            Organ Donation <span>History</span>
+          </h2>
+        </div>
+      </div>
+     
+    </div>
+    <% } else{%>
+      
+      <div class="main-space">
+        <div class="left-space">
+          <img id="profile-image" src="images/Hospital.png" alt="">
+        </div>
+        <div class="right-space">
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+              </div>
+              
+            </div>
+  
+          </div>
+          <!-- <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>
+                  Medical   <span>History</span>
+                </h2>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid cupiditate sequi fugiat ducimus nihil molestias consequatur sint vel? Nobis, maiores placeat exercitationem eum expedita culpa ullam sint ducimus modi architecto!</p>
+             
+  
+  
+             </ul>
+            </div>
+          </div> -->
+     
+        </div>
+      </div>
+      <div class="table-name">
+      </div>
+      <div class="bottom-main-space">
+        <div class="table-name">
+          <div class="heading_container">
+            <h2>
+              Organ Donation / Request <span>Details</span>
+            </h2>
+          </div>
+        </div>
+        
+        <h3 style="text-align:center; margin-top: 30px;">Donar Information</h3>
+        <div class="appointment-table">
+            <div class="table-wrapper">
+  
+                <table class="fl-table">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Organ</th>
+                        <th>Gender</th>
+                        <th>Blood Type</th>
+                        <th> Address</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Loop over receivers -->
+                      <% donar.forEach(function(donar) { %>
+                        <tr>
+                          <td><%= donar.name %></td>
+                          <td><%= donar.email %></td>
+                          <td><%= donar.organ %></td>
+                          <td><%= donar.gender %></td>
+                          <td><%= donar.blood %></td>
+                          <td><%= donar.address %></td>
+                        </tr> 
+                      <% }); %>
+                    <!-- <thead>
+                    <tr>
+                        <th>Donation ID</th>
+                        <th>DOCTOR</th>
+                        <th>Donor</th>
+                        <th>Receiver</th>
+                        <th>Date</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>0000</td>
+                        <td>YASH</td>
+                        <td>PALGHAR</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>VRUSHAL</td>
+                        <td>PALGHAR</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tr>
+                        <td>0002</td>
+                        <td>HARSH</td>
+                        <td>PALGHAR</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tr>
+                        <td>0003</td>
+                        <td>Doctor's Name</td>
+                        <td>Symptoms</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tr>
+                        <td>0004</td>
+                        <td>Doctor's Name</td>
+                        <td>Symptoms</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tr>
+                        <td>0005</td>
+                        <td>Doctor's Name</td>
+                        <td>Symptoms</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tr>
+                        <td>0006</td>
+                        <td>Doctor's Name</td>
+                        <td>Symptoms</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tr>
+                        <td>0007</td>
+                        <td>Doctor's Name</td>
+                        <td>Symptoms</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tr>
+                        <td>0008</td>
+                        <td>Doctor's Name</td>
+                        <td>Symptoms</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tr>
+                        <td>0009</td>
+                        <td>Doctor's Name</td>
+                        <td>Symptoms</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tbody> -->
+                </table>
+            </div>
+          
+        </div>
+        <h3 style="text-align:center;">Receiver Information</h3>
+        <div class="appointment-table">
+            <div class="table-wrapper">
+  
+                <table class="fl-table">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Organ</th>
+                        <th>Gender</th>
+                        <th>Blood Type</th>
+                        <th> Address</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Loop over receivers -->
+                      <% receiver.forEach(function(receiver) { %>
+                        <tr>
+                          <td><%= receiver.name %></td>
+                          <td><%= receiver.email %></td>
+                          <td><%= receiver.organ %></td>
+                          <td><%= receiver.gender %></td>
+                          <td><%= receiver.blood %></td>
+                          <td><%= receiver.address %></td>
+                        </tr>
+                      <% }); %>
+                    <!-- <thead>
+                    <tr>
+                        <th>Donation ID</th>
+                        <th>DOCTOR</th>
+                        <th>Donor</th>
+                        <th>Receiver</th>
+                        <th>Date</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>0000</td>
+                        <td>YASH</td>
+                        <td>PALGHAR</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>VRUSHAL</td>
+                        <td>PALGHAR</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tr>
+                        <td>0002</td>
+                        <td>HARSH</td>
+                        <td>PALGHAR</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tr>
+                        <td>0003</td>
+                        <td>Doctor's Name</td>
+                        <td>Symptoms</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tr>
+                        <td>0004</td>
+                        <td>Doctor's Name</td>
+                        <td>Symptoms</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tr>
+                        <td>0005</td>
+                        <td>Doctor's Name</td>
+                        <td>Symptoms</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tr>
+                        <td>0006</td>
+                        <td>Doctor's Name</td>
+                        <td>Symptoms</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tr>
+                        <td>0007</td>
+                        <td>Doctor's Name</td>
+                        <td>Symptoms</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tr>
+                        <td>0008</td>
+                        <td>Doctor's Name</td>
+                        <td>Symptoms</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tr>
+                        <td>0009</td>
+                        <td>Doctor's Name</td>
+                        <td>Symptoms</td>
+                        <td>00-00-00</td>
+                        <td>Confirm</td>
+                    </tr>
+                    <tbody> -->
+                </table>
+            </div>
+          
+        </div>
+       
+      </div>
+    <% } %>
+    <%- include("partial/footer.ejs") %>

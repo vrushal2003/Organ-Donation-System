@@ -1,0 +1,24 @@
+<%- include("partial/header.ejs") %>
+
+<div
+  style="
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block: 50px;
+  "
+>
+  <% if (notification && notification.length> 0) { %>
+  <ul>
+    <% notification.forEach(function(notif) { %>
+
+    <h3>- <%= notif %></h3>
+    <% }); %>
+  </ul>
+  <% } else { %>
+  <p>No notifications to display.</p>
+  <% } %>
+</div>
+
+<%- include("partial/footer.ejs") %>
